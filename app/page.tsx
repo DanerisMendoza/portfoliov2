@@ -9,6 +9,7 @@ import Hero from "@/app/segment/Hero";
 import Porfolio from "@/app/segment/portfolio/page";
 import Experience from "@/app/segment/experience/page";
 import Skills from "@/app/segment/skills/page";
+import Footer from "@/app/segment/footer/page";
 
 export default function IndexPage() {
   const { theme } = useTheme(); // Get the current theme from next-themes
@@ -35,6 +36,7 @@ export default function IndexPage() {
       <Porfolio />
       <Experience />
       <Skills />
+      <Footer/>
     </div>
   );
 }

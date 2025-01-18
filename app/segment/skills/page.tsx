@@ -1,14 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faToolbox } from "@fortawesome/free-solid-svg-icons";
 import { Card, CardContent } from "@/components/ui/card";
 import skillsData from "@/app/segment/skills/value.json";
 
 export default function Skills() {
-
-  useEffect(() => {
-    console.log(skillsData);
-  }, []);
 
   return (
     <div className="sm:h-[100%] container pt-28 pb-10" id="skills">

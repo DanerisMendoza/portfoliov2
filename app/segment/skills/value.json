@@ -76,6 +76,10 @@
                 "image": "https://nodejs.org/static/logos/nodejsStackedDark.svg"
             },
             {
+                "name": "Swagger",
+                "image": "/images/logo/swagger.png"
+            },
+            {
                 "name": "Mongo DB",
                 "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png"
             },
@@ -90,6 +94,10 @@
             {
                 "name": "Mysql",
                 "image": "https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png"
+            },
+            {
+                "name": "Postman",
+                "image": "/images/logo/postman.png"
             }
         ],
         "others": [
@@ -108,6 +116,14 @@
             {
                 "name": "Figma",
                 "image": "https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png?w=670&h=670&q=75&fit=max&auto=format"
+            },
+            {
+                "name": "Hostinger",
+                "image": "/images/logo/hostinger.png"
+            },
+            {
+                "name": "cPanel",
+                "image": "/images/logo/cPanel.png"
             }
         ]
     }
