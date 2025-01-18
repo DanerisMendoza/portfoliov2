@@ -1,0 +1,114 @@
+{
+    "skills": {
+        "frontend": [
+            {
+                "name": "ReactJs",
+                "image": "https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg"
+            },
+            {
+                "name": "Tanstack",
+                "image": "/images/logo/tanstack.png"
+            },
+            {
+                "name": "NextJS",
+                "image": "/images/logo/nextjs.png"
+            },
+            {
+                "name": "TypeScript",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20210506173343"
+            },
+            {
+                "name": "VueJs",
+                "image": "/images/logo/vue.png"
+            },
+            {
+                "name": "Vuetify",
+                "image": "/images/logo/vuetify.png"
+            },
+            {
+                "name": "Ionic",
+                "image": "/images/logo/ionic.png"
+            },
+            {
+                "name": "JavaScript",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png?20120221235433"
+            },
+            {
+                "name": "jQuery",
+                "image": "/images/logo/Jquery.png"
+            },
+            {
+                "name": "MaterialUI",
+                "image": "https://mui.com/static/logo.png"
+            },
+            {
+                "name": "Tailwind",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/600px-Tailwind_CSS_Logo.svg.png?20211001194333"
+            },
+            {
+                "name": "Bootstrap",
+                "image": "/images/logo/bootstrap.png"
+            },
+            {
+                "name": "HTML5",
+                "image": "/images/logo/html.png"
+            },
+            {
+                "name": "CSS",
+                "image": "/images/logo/css.png"
+            },
+            {
+                "name": "SASS",
+                "image": "/images/logo/sass.png"
+            },
+            {
+                "name": "Mantine",
+                "image": "/images/logo/mantine.png"
+            }
+        ],
+        "backend": [
+            {
+                "name": "Express JS",
+                "image": "/images/logo/express.png"
+            },
+            {
+                "name": "Node JS",
+                "image": "https://nodejs.org/static/logos/nodejsStackedDark.svg"
+            },
+            {
+                "name": "Mongo DB",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png"
+            },
+            {
+                "name": "Laravel",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/121px-Laravel.svg.png"
+            },
+            {
+                "name": "PHP",
+                "image": "https://cdn-icons-png.flaticon.com/512/5968/5968332.png"
+            },
+            {
+                "name": "Mysql",
+                "image": "https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png"
+            }
+        ],
+        "others": [
+            {
+                "name": "Git",
+                "image": "/images/logo/git.png"
+            },
+            {
+                "name": "Docker",
+                "image": "/images/logo/docker.png"
+            },
+            {
+                "name": "Jira",
+                "image": "https://cdn.icon-icons.com/icons2/2699/PNG/512/atlassian_jira_logo_icon_170511.png"
+            },
+            {
+                "name": "Figma",
+                "image": "https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png?w=670&h=670&q=75&fit=max&auto=format"
+            }
+        ]
+    }
+}

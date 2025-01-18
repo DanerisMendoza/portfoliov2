@@ -36,5 +36,16 @@
       "Utilized Vue JS, Vuetify and Vuex for Frontend, Laravel and MySQL for Backend Development.",
       "Collaborated with other developers using Git, actively following the guidance of our seniors and the manager."
     ]
+  },
+  {
+    "icon": "🛠️",
+    "title": "BS Computer Science at University of Caloocan City",
+    "date": "2020 - 2024",
+    "description": [
+      "Developed strong programming fundamentals, with hands-on experience in frontend, backend, and DevOps.",
+      "Collaborated with fellow tech enthusiasts on various academic and extracurricular projects.",
+      "Participated in app development competitions and coding contests, honing problem-solving and teamwork skills.",
+      "Engaged in coursework that covered algorithms, data structures, and software engineering principles."
+    ]
   }
 ]

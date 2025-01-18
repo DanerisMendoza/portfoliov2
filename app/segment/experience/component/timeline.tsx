@@ -1,8 +1,9 @@
 // components/Timeline.js
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card"
-
+import { GlobalStore } from "@/app/GlobalStore";
 const Timeline = ({ events }: any) => {
+    const { is_dark } = GlobalStore();
     return (
         <div className="relative w-full mx-auto pt-8 pb-16">
             {/* Timeline line */}
@@ -15,18 +16,18 @@ const Timeline = ({ events }: any) => {
                         {index % 2 === 0 ? (
                             // Left side event
                             <>
-                                <div className="md:w-1/2 w-full md:pl-0"
+                                <div className="md:w-1/2 w-full md:pl-0 "
                                     data-aos="fade-right"
                                     data-aos-delay="800"
                                     data-aos-duration="500">
-                                    <Card className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out w-full">
-                                        <h3 className="text-2xl font-semibold text-gray-800">{event.title}</h3>
-                                        <p className="text-gray-600 text-sm">{event.date}</p>
+                                    <Card className="text-gray-700  dark:text-white p-6 border border-gray-200 rounded-lg shadow-lg bg-white dark:bg-[#31363F] hover:shadow-xl transition-shadow duration-300 ease-in-out w-full">
+                                        <h3 className="text-2xl font-semibold ">{event.title}</h3>
+                                        <p className=" text-sm">{event.date}</p>
                                         {Array.isArray(event.description) ? (
-                                            <ul className="list-disc pl-1">
+                                            <ul className="list-disc pl-4 text-sm ">
                                                 {event.description.map((bullet: string, index: number) => (
-                                                    <li key={index} className="text-gray-700">
-                                                        <span className="text-gray-700">{bullet}</span>
+                                                    <li key={index}>
+                                                        <span >{bullet}</span>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -45,14 +46,14 @@ const Timeline = ({ events }: any) => {
                                     data-aos="fade-left"
                                     data-aos-delay="800"
                                     data-aos-duration="500">
-                                    <Card className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out w-full">
-                                        <h3 className="text-2xl font-semibold text-gray-800">{event.title}</h3>
-                                        <p className="text-gray-600 text-sm">{event.date}</p>
+                                    <Card className="text-gray-700  dark:text-white p-6 border border-gray-200 rounded-lg shadow-lg  bg-white dark:bg-[#31363F] hover:shadow-xl transition-shadow duration-300 ease-in-out w-full">
+                                        <h3 className="text-2xl font-semibold ">{event.title}</h3>
+                                        <p className=" text-sm">{event.date}</p>
                                         {Array.isArray(event.description) ? (
-                                            <ul className="list-disc pl-4">
+                                            <ul className="list-disc pl-4 text-sm">
                                                 {event.description.map((bullet: string, index: number) => (
-                                                    <li key={index} className="text-gray-700">
-                                                        <span className="text-gray-700">{bullet}</span>
+                                                    <li key={index} >
+                                                        <span >{bullet}</span>
                                                     </li>
                                                 ))}
                                             </ul>

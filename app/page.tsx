@@ -2,11 +2,13 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useTheme } from "next-themes"; 
+import {GlobalStore} from '@/app/GlobalStore'
+
 import Hero from "@/app/segment/Hero";
 import Porfolio from "@/app/segment/portfolio/page";
-import { useTheme } from "next-themes"; // Import the useTheme hook
-import {GlobalStore} from '@/app/GlobalStore'
-import Experience from "./segment/experience/page";
+import Experience from "@/app/segment/experience/page";
+import Skills from "@/app/segment/skills/page";
 
 export default function IndexPage() {
   const { theme } = useTheme(); // Get the current theme from next-themes
@@ -32,6 +34,7 @@ export default function IndexPage() {
       <Hero />
       <Porfolio />
       <Experience />
+      <Skills />
     </div>
   );
 }
