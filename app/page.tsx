@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Hero from "@/app/segment/Hero";
-import Porfolio from "@/app/segment/portfolio/Porfolio";
+import Porfolio from "@/app/segment/portfolio/page";
 import { useTheme } from "next-themes"; // Import the useTheme hook
 import {GlobalStore} from '@/app/GlobalStore'
 import Experience from "./segment/experience/page";
