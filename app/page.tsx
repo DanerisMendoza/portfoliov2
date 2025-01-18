@@ -6,6 +6,7 @@ import Hero from "@/app/segment/Hero";
 import Porfolio from "@/app/segment/portfolio/Porfolio";
 import { useTheme } from "next-themes"; // Import the useTheme hook
 import {GlobalStore} from '@/app/GlobalStore'
+import Experience from "./segment/experience/page";
 
 export default function IndexPage() {
   const { theme } = useTheme(); // Get the current theme from next-themes
@@ -27,9 +28,10 @@ export default function IndexPage() {
   }, []);
 
   return (
-    <div className="container h-full">
+    <div className="h-full w-full">
       <Hero />
       <Porfolio />
+      <Experience />
     </div>
   );
 }

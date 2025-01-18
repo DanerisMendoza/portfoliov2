@@ -1,0 +1,40 @@
+[
+  {
+    "icon": "🛠️",
+    "title": "Web & Mobile Developer at Intellismart Technology",
+    "date": "Sept 2024 - Present",
+    "description": [
+      "In charge of development of HRIS Web App Version 2 and the maintenance of the existing HRIS mobile Application.",
+      "Convert a Figma prototype to react-based web application following mobile first design and modular architecture.",
+      "Developed reusable react components with typescript, Utilized tailwind CSS for responsive design.",
+      "Integration of RESTful APIs, ensuring efficient data communication between the frontend and backend.",
+      "Utilized ReactJS, Zustand, Tanstack Query, Mantine, Tailwind CSS and Typescript for Web Development.",
+      "Utilized React Native + Expo, Context API and Typescript for Mobile Development.",
+      "Collaborated with QA, Project Managers and other Developers utilizing Jira and Git."
+    ]
+  },
+  {
+    "icon": "🛠️",
+    "title": "Freelance Full Stack Developer",
+    "date": "November 2023 - Present",
+    "description": [
+      "Co-in charge of ERD creation, including data normalization and using Figma for prototypes before development",
+      "In charge of Deployment of projects using SSH, cPanel, Hostinger, and a MySQL remote database.",
+      "Developed robust APIs utilizing Laravel and Server-side pagination, search, filtering, sorting and data processing.",
+      "Developed responsive web application and reusable web components with typescript.",
+      "Collaborated with a team of three developers, one QA and one project manager using Jira and Git."
+    ]
+  },
+  {
+    "icon": "🛠️",
+    "title": "Full Stack Developer Intern at INGCO PH",
+    "date": "June 2023 - Aug 2023",
+    "description": [
+      "Maintained and implemented updates in the existing internal ticketing system and optimized its performance",
+      "Developed a web-based ticketing system for external users to integrate with the existing internal ticketing system.",
+      "Implemented Laravel Scheduler to synchronize a cloud database with a local database.",
+      "Utilized Vue JS, Vuetify and Vuex for Frontend, Laravel and MySQL for Backend Development.",
+      "Collaborated with other developers using Git, actively following the guidance of our seniors and the manager."
+    ]
+  }
+]

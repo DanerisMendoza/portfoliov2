@@ -39,7 +39,7 @@ export default function Carousel() {
       className='swiper1 '
       slidesPerView={3}
       spaceBetween={30}
-      centeredSlides={true}
+      // centeredSlides={true}
       // centeredSlidesBounds={true}
       modules={[Keyboard, Navigation, Pagination]}
       navigation
