@@ -15,7 +15,7 @@ const Hero = () => {
                         <h1
                             className="font-extrabold text-3xl sm:text-6xl   text-black dark:text-white "
                             data-aos="fade-right"
-                            data-aos-delay="1300"
+                            data-aos-delay="800"
                             data-aos-duration="500"
                         >
                             Daneris Mendoza
@@ -23,7 +23,7 @@ const Hero = () => {
                         <h2
                             className="text-xl text-gray-500  lg:text-4xl dark:text-white"
                             data-aos="fade-right"
-                            data-aos-delay="1400"
+                            data-aos-delay="800"
                             data-aos-duration="500"
                         >
                             I'm a Software Developer
@@ -32,7 +32,7 @@ const Hero = () => {
                             <h5
                                 className=" text-base text-gray-500 lg:text-2xl sm:max-w-[80%] dark:text-white"
                                 data-aos="fade-right"
-                                data-aos-delay="1500"
+                                data-aos-delay="800"
                                 data-aos-duration="500"
                             >
                                 “Committed to delivering quality solutions and focusing on everyday growth”

@@ -15,7 +15,10 @@ const Timeline = ({ events }: any) => {
                         {index % 2 === 0 ? (
                             // Left side event
                             <>
-                                <div className="md:w-1/2 w-full md:pl-0">
+                                <div className="md:w-1/2 w-full md:pl-0"
+                                    data-aos="fade-right"
+                                    data-aos-delay="800"
+                                    data-aos-duration="500">
                                     <Card className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out w-full">
                                         <h3 className="text-2xl font-semibold text-gray-800">{event.title}</h3>
                                         <p className="text-gray-600 text-sm">{event.date}</p>
@@ -38,7 +41,10 @@ const Timeline = ({ events }: any) => {
                             // Right side event
                             <>
                                 <div className="md:w-1/2 w-0  md:justify-start md:pl-4 hidden md:block"></div>
-                                <div className="md:w-1/2 w-full md:pr-0">
+                                <div className="md:w-1/2 w-full md:pr-0"
+                                    data-aos="fade-left"
+                                    data-aos-delay="800"
+                                    data-aos-duration="500">
                                     <Card className="p-6 border border-gray-200 rounded-lg shadow-lg bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out w-full">
                                         <h3 className="text-2xl font-semibold text-gray-800">{event.title}</h3>
                                         <p className="text-gray-600 text-sm">{event.date}</p>
