@@ -1,39 +1,100 @@
-import Link from "next/link"
-
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+"use client";
+import { Button } from "@/components/ui/button"
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function IndexPage() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000
+    });
+  }, [])
+
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-      </div>
-      <div className="flex gap-4">
-        <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
-        >
-          Documentation
-        </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
-      </div>
-    </section>
+    <div className="container h-full">
+      <div className=" flex flex-col sm:pl-28 pt-2 sm:pt-40 h-full ">
+        <div className="flex flex-col-reverse sm:flex-row items-center justify-around w-full">
+          <div className="flex flex-col justify-between sm:w-2/3 sm:p-1  text-center sm:text-start items-center sm:items-start">
+            <div className="flex flex-col gap-2 ">
+
+              <h1
+                className="font-extrabold text-3xl sm:text-6xl   text-black dark:text-white "
+                data-aos="fade-right"
+                data-aos-delay="1300"
+                data-aos-duration="500"
+              >
+                Daneris Mendoza
+              </h1>
+              <h2
+                className="text-xl text-gray-500  lg:text-4xl dark:text-white"
+                data-aos="fade-right"
+                data-aos-delay="1400"
+                data-aos-duration="500"
+              >
+                I'm a Software Developer
+              </h2>
+              <div className="">
+                <h5
+                  className=" text-base text-gray-500 lg:text-2xl sm:max-w-[80%] dark:text-white"
+                  data-aos="fade-right"
+                  data-aos-delay="1500"
+                  data-aos-duration="500"
+                >
+                  “Committed to delivering quality solutions and focusing on everyday growth”
+                </h5>
+              </div>
+            </div>
+
+            <div
+              className="mt-4 md:mt-6  flex flex-row items-center gap-2 dark:text-white "
+              data-aos="fade-right"
+              data-aos-delay="800"
+              data-aos-duration="500"
+            >
+              <a className="enlarge_litle" href="mailto:danerismendoza096@gmail.com">
+                <Button
+                  className="flex gap-2"
+                >
+                  Contact Me
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </Button>
+              </a>
+              <a
+                className="enlarge"
+                href="https://github.com/DanerisMendoza"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithub} size="2xl" />
+              </a>
+              <a
+                className="enlarge"
+                href="https://www.linkedin.com/in/danerismendoza/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+              </a>
+            </div>
+          </div>
+          <div className="w-2/3 sm:w-1/5 ">
+            <img
+              data-aos="fade-left"
+              data-aos-delay="800"
+              data-aos-duration="500"
+              src="/images/danerisGraduatePic.png"
+              className=" object-cover danerisGraduatePic rounded-lg"
+              alt="DanerisProfilePicture"
+            />
+          </div>
+        </div>
+      </div >
+    </div>
+
   )
 }

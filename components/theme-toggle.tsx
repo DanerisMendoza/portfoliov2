@@ -11,6 +11,9 @@ export function ThemeToggle() {
 
   return (
     <Button
+      data-aos="fade-top"
+      data-aos-delay="800"
+      data-aos-duration="1200"
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
