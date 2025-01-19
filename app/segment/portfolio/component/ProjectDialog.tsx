@@ -42,12 +42,12 @@ export default function ProjectDialog() {
     const guide = () => {
         return (
             <div className="flex gap-2">
-                <FontAwesomeIcon icon={faArrowLeft} size="xl" onClick={() => {
-                    set_selected_project(slidesData[selected_project_index - 1])
+                <FontAwesomeIcon icon={faArrowLeft} className="cursor-pointer" size="xl" onClick={() => {
+                    set_selected_project(projects[selected_project_index - 1])
                 }} />
                 <div>{selected_project.name}</div>
-                <FontAwesomeIcon icon={faArrowRight} size="xl" onClick={() => {
-                    set_selected_project(slidesData[selected_project_index + 1])
+                <FontAwesomeIcon icon={faArrowRight} className="cursor-pointer" size="xl" onClick={() => {
+                    set_selected_project(projects[selected_project_index + 1])
                 }} />
             </div>
         )
@@ -55,18 +55,19 @@ export default function ProjectDialog() {
 
     return (
         <Dialog open={project_dialog} onOpenChange={set_project_dialog}>
-            <DialogContent hideCloseButton={true} fullscreen={true} className="min-w-full min-h-screen h-screen w-screen bg-gray-100 rounded-md flex flex-col">
+            <DialogContent hideCloseButton={true} fullscreen={true} className="min-w-full min-h-screen h-screen w-screen bg-gray-100 rounded-md flex flex-col dark:bg-[#18191a]">
                 <DialogTitle></DialogTitle>
                 <DialogDescription></DialogDescription>
                 {header()}
 
-                <div className='flex flex-col sm:flex-row w-full h-full m-3'>
-                    <div className="bg-gray-200 h-[50%] sm:h-full w-[95%] sm:w-[70%] flex flex-col justify-center sm:pb-36">
+                <div className='flex flex-col sm:flex-row w-full m-2 h-full'>
+
+                    <div className="bg-gray-200 h-[50%] w-[95%]  sm:w-[70%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] rounded-2xl">
                         <NestedCarousel />
                     </div>
 
 
-                    <div className="bg-white overflow-y-auto w-full sm:w-[30%] p-4 flex flex-col gap-2 h-screen">
+                    <div className="bg-white w-[95%] sm:w-[30%] sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] rounded-2xl">
 
                         <div className='flex flex-row  flex-wrap gap-1 items-center' >
                             <div>Technology Used:&nbsp;</div>
@@ -119,16 +120,16 @@ export default function ProjectDialog() {
 
                         {selected_project && selected_project.demo_accounts && (
                             <>
-                                <div className='flex flex-col pb-20 text-sm'>
+                                <div className='flex flex-col  text-sm overflow-y-auto '>
                                     <div>Demo Accounts:&nbsp;</div>
                                     <Accordion type="single" collapsible >
                                         {selected_project.demo_accounts.map((item, index) => (
                                             <AccordionItem key={`role${item.role}${index}`} value={`role${item.role}${index}`}>
                                                 <AccordionTrigger>{item.role}</AccordionTrigger>
                                                 <AccordionContent className="pl-20">
-                                                    <Accordion type="single" collapsible >
+                                                    <Accordion type="single" collapsible className="">
                                                         <div className="p-2">Username: {item.username}</div>
-                                                        <div className="p-2">Password: {item.password}</div>
+                                                        <div className="p-2 pb-8">Password: {item.password}</div>
                                                     </Accordion>
                                                 </AccordionContent>
                                             </AccordionItem>
