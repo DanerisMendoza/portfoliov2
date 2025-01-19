@@ -112,10 +112,10 @@
 }
 
 .swiper1>.swiper-pagination {
-  width: 6.1rem !important;
+  /* width: 6.1rem !important; */
 }
 .swiper2>.swiper-pagination {
-  width: 5.5rem !important;
+  /* width: 5.5rem !important; */
 }
 
 .swiper-pagination {

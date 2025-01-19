@@ -7,7 +7,7 @@ import skillsData from "@/app/segment/skills/value.json";
 export default function Skills() {
 
   return (
-    <div className="sm:h-[100%] container pt-28 pb-10" id="skills">
+    <div className="sm:h-[90%] container  pb-10" id="skills">
       <div
         className="flex flex-row items-center justify-center text-5xl dark:text-white gap-5 p-10"
         data-aos="fade-up"

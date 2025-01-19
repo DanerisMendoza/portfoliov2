@@ -7,7 +7,7 @@ const Hero = () => {
 
     return (
         <div className="container flex flex-col sm:pl-28 pt-2 sm:pt-40 h-full " id="home">
-            <div className="flex flex-col-reverse sm:flex-row items-center justify-around w-full">
+            <div className="flex flex-col-reverse sm:flex-row items-center justify-around w-full overflow-x-hidden">
                 <div className="flex flex-col justify-between sm:w-2/3 sm:p-1  text-center sm:text-start items-center sm:items-start">
                     <div className="flex flex-col gap-2 ">
                         <h1

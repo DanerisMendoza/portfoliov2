@@ -5,7 +5,7 @@ import { GlobalStore } from "@/app/GlobalStore";
 const Timeline = ({ events }: any) => {
     const { is_dark } = GlobalStore();
     return (
-        <div className="relative w-full mx-auto pt-8 pb-16">
+        <div className="relative  mx-auto pt-8 pb-36 overflow-x-hidden">
             {/* Timeline line */}
             <div className="absolute left-1/2 top-0 w-1 bg-gray-300 h-full transform -translate-x-1/2 md:block hidden"></div>
 

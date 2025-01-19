@@ -13,22 +13,17 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Badge } from "@/components/ui/badge"
 import { GlobalStore } from '@/app/GlobalStore'
+import { PortfolioStore } from '@/app/segment/portfolio/store'
 import { DynamicSystemLogo } from "@/app/segment/portfolio/component/DynamicSystemLogo";
 export default function Carousel() {
 
   const { is_dark } = GlobalStore();
-
-  useEffect(() => {
-    console.log(slidesData)
-  }, [])
+  const { set_multiple_links } = PortfolioStore();
 
   const handleClickOpen = (project: any, index: number) => {
 
   }
-
-  const setMultipleLinks = (project: any) => {
-
-  }
+  const projects: ProjectType[] = slidesData;
   const [systemLogo, setSystemLogo] = useState(DynamicSystemLogo("#000000"));
 
   return (
@@ -60,7 +55,7 @@ export default function Carousel() {
       initialSlide={0}
     >
 
-      {slidesData.map((project, index) => (
+      {projects.map((project, index) => (
         <SwiperSlide key={project.name} style={{ height: '33rem', display: 'flex', alignItems: 'center', padding: '1rem' }} >
           <Card className='rounded-xl w-full' style={{
             // ff = white && 00 = black
@@ -68,7 +63,6 @@ export default function Carousel() {
           }}>
             <CardContent >
               <div className="flex flex-col justify-start bg-white w-full h-96 p-6  m-center   " style={{
-                // ff = white && 00 = black
                 backgroundColor: is_dark ? '#31363F' : '#ffffff'
               }}>
                 <Badge className="mb-2 self-end  dark:text-black">
@@ -87,7 +81,7 @@ export default function Carousel() {
                     </a>
                   ) : project.source_code.length > 0 && (
                     <>
-                      <FontAwesomeIcon icon={faGithub} size="2xl" className="text-blue-500 grow enlarge" onClick={() => setMultipleLinks(project.source_code)} />
+                      <FontAwesomeIcon icon={faGithub} size="2xl" className="text-blue-500 grow enlarge" onClick={() => set_multiple_links(project.source_code)} />
                     </>
                   )}
                   <FontAwesomeIcon onClick={() => handleClickOpen(project, index)} className='enlarge pl-2 pr-2 ' style={{color: is_dark ? '#ffffff' : '#000000', border: is_dark ? '1px solid #ffffff' : '1px solid #000000', borderRadius: '12%'}} icon={faEllipsis} size="2xl" />
