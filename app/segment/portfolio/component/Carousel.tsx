@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import slidesData from '@/app/segment/portfolio/values.json';
+import slidesData from '@/app/segment/portfolio/values/project_values.json';
 import { Keyboard, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card"
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -18,11 +18,7 @@ import { DynamicSystemLogo } from "@/app/segment/portfolio/component/DynamicSyst
 export default function Carousel() {
 
   const { is_dark } = GlobalStore();
-  const { set_multiple_links, set_multiple_link_dialog } = PortfolioStore();
-
-  const handleClickOpen = (project: any, index: number) => {
-
-  }
+  const { set_selected_project, set_multiple_links, set_multiple_link_dialog, set_project_dialog } = PortfolioStore();
   const projects: ProjectType[] = slidesData;
   const [systemLogo, setSystemLogo] = useState(DynamicSystemLogo("#000000"));
 
@@ -56,7 +52,7 @@ export default function Carousel() {
     >
 
       {projects.map((project, index) => (
-        <SwiperSlide key={project.name} style={{ height: '33rem', display: 'flex', alignItems: 'center', padding: '1rem' }} >
+        <SwiperSlide key={project.name} style={{ height: '30rem', display: 'flex', alignItems: 'center', padding: '1rem' }} >
           <Card className='rounded-xl w-full' style={{
             // ff = white && 00 = black
             backgroundColor: is_dark ? '#31363F' : '#ffffff'
@@ -84,7 +80,7 @@ export default function Carousel() {
                       <FontAwesomeIcon icon={faGithub} size="2xl" className="text-blue-500 grow enlarge" onClick={() => { set_multiple_links(project.source_code); set_multiple_link_dialog(true); }} />
                     </>
                   )}
-                  <FontAwesomeIcon onClick={() => handleClickOpen(project, index)} className='enlarge pl-2 pr-2 ' style={{ color: is_dark ? '#ffffff' : '#000000', border: is_dark ? '1px solid #ffffff' : '1px solid #000000', borderRadius: '12%' }} icon={faEllipsis} size="2xl" />
+                  <FontAwesomeIcon onClick={() => { set_selected_project(project); set_project_dialog(true) }} className='enlarge pl-2 pr-2 ' style={{ color: is_dark ? '#ffffff' : '#000000', border: is_dark ? '1px solid #ffffff' : '1px solid #000000', borderRadius: '12%' }} icon={faEllipsis} size="2xl" />
                   {project.project_link && (
                     <a href={project.project_link} target="_blank" className="text-blue-500 grow enlarge">
                       <FontAwesomeIcon icon={faLink} size="2xl" />

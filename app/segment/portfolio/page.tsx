@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "@/app/segment/portfolio/component/Carousel"
 import SrcDialog from "@/app/segment/portfolio/component/SrcDialog";
+import ProjectDialog from "@/app/segment/portfolio/component/ProjectDialog";
 
 export default function Porfolio() {
 
@@ -21,6 +22,7 @@ export default function Porfolio() {
           </div>
           <Carousel />
           <SrcDialog />
+          <ProjectDialog />
         </div>
       </div>
     </div>

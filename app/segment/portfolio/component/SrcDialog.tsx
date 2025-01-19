@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function SrcDialog() {
     const { multiple_link, set_multiple_links, multiple_link_dialog, set_multiple_link_dialog } = PortfolioStore();
 
-    // clear the state on unmpount
+    // clear the state on unmount
     useEffect(() => {
         return (set_multiple_links(multiple_link_dialog ? multiple_link : []));
     }, [multiple_link_dialog])

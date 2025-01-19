@@ -28,6 +28,11 @@ interface LinkItem {
 interface PortfolioState {
   multiple_link: LinkItem[];
   multiple_link_dialog: boolean;
+  project_dialog: boolean;
+  selected_project: ProjectType;
+
   set_multiple_links: (multiple_link: LinkItem[]) => void;
   set_multiple_link_dialog: (multiple_link_dialog: boolean) => void;
+  set_project_dialog: (project_dialog: boolean) => void;
+  set_selected_project: (selected_project: ProjectType) => void;
 }
