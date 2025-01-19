@@ -30,9 +30,13 @@ interface PortfolioState {
   multiple_link_dialog: boolean;
   project_dialog: boolean;
   selected_project: ProjectType;
+  selected_images: any;
+  selected_project_index: number;
 
   set_multiple_links: (multiple_link: LinkItem[]) => void;
   set_multiple_link_dialog: (multiple_link_dialog: boolean) => void;
   set_project_dialog: (project_dialog: boolean) => void;
   set_selected_project: (selected_project: ProjectType) => void;
+  set_selected_images: (selected_images: any) => void;
+  set_selected_project_index: (selected_project_index: any) => void;
 }

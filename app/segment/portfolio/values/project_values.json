@@ -14,7 +14,7 @@
             {"Frontend": "https://github.com/DanerisMendoza/ExpensesTrackerFE"},
             {"Backend": "https://github.com/DanerisMendoza/ExpensesTrackerBE"}
         ],
-        "images_path": "/portfolio/images/et",
+        "images_path": "/images/et",
         "images_num_web": 4,
         "demo_accounts": [
             {"role": "Admin", "username": "admin", "password": "12345678"},
@@ -44,7 +44,7 @@
         "type": "Freelance",
         "role": ["Full Stack Developer"],
         "source_code": [],
-        "images_path": "/portfolio/images/rms",
+        "images_path": "/images/rms",
         "images_num_web": 4,
         "higlights": [
             "Used Apex Chart for Dynamic Analytics of Colleges, Department, Year and Month",
@@ -72,7 +72,7 @@
             {"Backend": "https://github.com/DanerisMendoza/e-palengke-back"},
             {"Mobile": "https://github.com/DanerisMendoza/e-palengke-ionic"}
         ],
-        "images_path": "/portfolio/images/e-palengke",
+        "images_path": "/images/e-palengke",
         "images_num_web": 19,
         "images_num_mobile": 6,
         "demo_accounts": [
@@ -104,7 +104,7 @@
         "type": "Freelance",
         "role": ["Full Stack Developer"],
         "source_code": [],
-        "images_path": "/portfolio/images/cbdrgms",
+        "images_path": "/images/cbdrgms",
         "images_num_web": 11,
         "higlights": [
             "Utilized PusherJS/Websockets for realtime end user report that will reflect in vue leaflet map",
@@ -127,7 +127,7 @@
         "source_code": [
             {"source_code":"https://github.com/DanerisMendoza/voting-blockchain"}
         ],
-        "images_path": "/portfolio/images/bv",
+        "images_path": "/images/bv",
         "images_num_web": 5,
         "images_num_mobile": 9,
         "higlights": [
@@ -152,7 +152,7 @@
             {"Web": "https://github.com/DanerisMendoza/WEBOMS-WEB"},
             {"Mobile": "https://github.com/DanerisMendoza/WEBOMS-MOBILE"}
         ],
-        "images_path": "/portfolio/images/weboms",
+        "images_path": "/images/weboms",
         "images_num_web": 24,
         "images_num_mobile": 8,
         "demo_accounts": [
@@ -181,7 +181,7 @@
         "source_code": [
             {"source_code":"https://github.com/DanerisMendoza/cashManagementTracker"}
         ],
-        "images_path": "/portfolio/images/cmt",
+        "images_path": "/images/cmt",
         "images_num_web": 0,
         "images_num_mobile": 9,
         "higlights": [
