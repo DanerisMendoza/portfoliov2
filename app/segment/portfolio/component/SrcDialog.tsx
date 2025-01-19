@@ -6,22 +6,15 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SrcDialog() {
-    const { multiple_link, set_multiple_links } = PortfolioStore();
-    const [open, setOpen] = useState(false);
-    useEffect(() => {
-        if (multiple_link.length > 0) {
-            setOpen(true)
-        }
-    }, [multiple_link])
+    const { multiple_link, set_multiple_links, multiple_link_dialog, set_multiple_link_dialog } = PortfolioStore();
 
+    // clear the state on unmpount
     useEffect(() => {
-        if (multiple_link.length > 0 && open === false) {
-            set_multiple_links([])
-        }
-    }, [open])
+        return (set_multiple_links(multiple_link_dialog ? multiple_link : []));
+    }, [multiple_link_dialog])
 
     return (
-        <Dialog open={open} onOpenChange={setOpen}>
+        <Dialog open={multiple_link_dialog} onOpenChange={set_multiple_link_dialog}>
             <DialogContent className="w-[97%] rounded-md">
                 <DialogHeader>
                     <DialogTitle></DialogTitle>

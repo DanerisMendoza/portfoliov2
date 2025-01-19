@@ -18,7 +18,7 @@ import { DynamicSystemLogo } from "@/app/segment/portfolio/component/DynamicSyst
 export default function Carousel() {
 
   const { is_dark } = GlobalStore();
-  const { set_multiple_links } = PortfolioStore();
+  const { set_multiple_links, set_multiple_link_dialog } = PortfolioStore();
 
   const handleClickOpen = (project: any, index: number) => {
 
@@ -81,10 +81,10 @@ export default function Carousel() {
                     </a>
                   ) : project.source_code.length > 0 && (
                     <>
-                      <FontAwesomeIcon icon={faGithub} size="2xl" className="text-blue-500 grow enlarge" onClick={() => set_multiple_links(project.source_code)} />
+                      <FontAwesomeIcon icon={faGithub} size="2xl" className="text-blue-500 grow enlarge" onClick={() => { set_multiple_links(project.source_code); set_multiple_link_dialog(true); }} />
                     </>
                   )}
-                  <FontAwesomeIcon onClick={() => handleClickOpen(project, index)} className='enlarge pl-2 pr-2 ' style={{color: is_dark ? '#ffffff' : '#000000', border: is_dark ? '1px solid #ffffff' : '1px solid #000000', borderRadius: '12%'}} icon={faEllipsis} size="2xl" />
+                  <FontAwesomeIcon onClick={() => handleClickOpen(project, index)} className='enlarge pl-2 pr-2 ' style={{ color: is_dark ? '#ffffff' : '#000000', border: is_dark ? '1px solid #ffffff' : '1px solid #000000', borderRadius: '12%' }} icon={faEllipsis} size="2xl" />
                   {project.project_link && (
                     <a href={project.project_link} target="_blank" className="text-blue-500 grow enlarge">
                       <FontAwesomeIcon icon={faLink} size="2xl" />
