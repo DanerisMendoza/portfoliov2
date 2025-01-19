@@ -22,7 +22,7 @@ interface LinkItem {
     Frontend?: string;
     Backend?: string;
     Mobile?: string;
-    src?: string;
+    source_code?: string;
 }
 
 interface PortfolioState {

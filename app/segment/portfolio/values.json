@@ -125,7 +125,7 @@
         "type": "Acad 4th Year Case Study",
         "role": ["Full Stack Developer", "Project Lead"],
         "source_code": [
-            {"src":"https://github.com/DanerisMendoza/voting-blockchain"}
+            {"source_code":"https://github.com/DanerisMendoza/voting-blockchain"}
         ],
         "images_path": "/portfolio/images/bv",
         "images_num_web": 5,
@@ -179,7 +179,7 @@
         "type": "Acad 2nd Year Case Study",
         "role": ["Full Stack Developer", "Project Lead"],
         "source_code": [
-            {"src":"https://github.com/DanerisMendoza/cashManagementTracker"}
+            {"source_code":"https://github.com/DanerisMendoza/cashManagementTracker"}
         ],
         "images_path": "/portfolio/images/cmt",
         "images_num_web": 0,

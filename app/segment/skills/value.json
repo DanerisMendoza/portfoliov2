@@ -57,9 +57,10 @@
                 "name": "CSS",
                 "image": "/images/logo/css.png"
             },
+            
             {
-                "name": "SASS",
-                "image": "/images/logo/sass.png"
+                "name": "Shadcn",
+                "image": "/images/logo/shadcn.png"
             },
             {
                 "name": "Mantine",
