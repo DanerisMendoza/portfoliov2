@@ -11,7 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import slidesData from '@/app/segment/portfolio/values/project_values.json';
 import { Skeleton } from "@/components/ui/skeleton"
 import LoadingWrapper from "@/app/segment/portfolio/component/LoadingWrapper"
-
+import cn from 'clsx';
 export default function ProjectDialog() {
     const { project_dialog, set_project_dialog, selected_project, set_selected_project, set_selected_project_index, selected_project_index, is_loading } = PortfolioStore();
     const projects: ProjectType[] = slidesData;
@@ -65,7 +65,7 @@ export default function ProjectDialog() {
 
     const projectDescription = () => {
         return (
-            <div className="bg-white w-[95%] sm:w-[30%] sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] sm:rounded-2xl overflow-y-auto sm:over">
+            <>
 
                 <div className='flex flex-row  flex-wrap gap-1 items-center' >
                     <div>Technology Used:&nbsp;</div>
@@ -134,7 +134,7 @@ export default function ProjectDialog() {
                 <LoadingWrapper>
                     {selected_project && selected_project.demo_accounts && (
                         <>
-                            <div className='flex flex-col  text-sm sm:overflow-y-auto pb-12 sm:pb-0'>
+                            <div className='flex flex-col  text-sm  pb-12 sm:pb-0'>
                                 <div>Demo Accounts:&nbsp;</div>
                                 <Accordion type="single" collapsible >
                                     {selected_project.demo_accounts.map((item, index) => (
@@ -155,25 +155,26 @@ export default function ProjectDialog() {
                 </LoadingWrapper>
 
 
-            </div>
+            </>
         )
     }
 
     return (
         <Dialog open={project_dialog} onOpenChange={set_project_dialog}>
-            <DialogContent hideCloseButton={true} fullscreen={true} className="min-w-full min-h-screen h-screen w-screen bg-gray-100 sm:rounded-md flex flex-col dark:bg-[#18191a]">
+            <DialogContent hideCloseButton={true} fullscreen={true} className="overflow-y-auto sm:overflow-y-hidden min-w-full min-h-screen h-screen w-screen bg-gray-100 sm:rounded-md flex flex-col dark:bg-[#18191a]">
                 <DialogTitle></DialogTitle>
                 <DialogDescription></DialogDescription>
                 {header()}
 
-                <div className='flex flex-col sm:flex-row w-full m-2 h-full'>
+                <div className={cn('flex flex-col sm:flex-row w-full sm:h-full p-2', { 'h-full': is_loading })}>
 
-                    <div className="bg-white sm:bg-gray-200 h-[50%] w-[95%]  sm:w-[70%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] sm:rounded-2xl">
+                    <div className={cn("bg-gray-200 h-[25%] w-full  sm:w-[70%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] sm:rounded-2xl", { 'h-[50%]': is_loading })}>
                         <NestedCarousel />
                     </div>
 
-
-                    {projectDescription()}
+                    <div className={cn("bg-white w-full sm:w-[30%] sm:overflow-y-auto   sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] sm:rounded-2xl  sm:over", { 'h-[90%]': is_loading })}>
+                        {projectDescription()}
+                    </div>
 
 
                 </div>
