@@ -2,7 +2,7 @@
 import { PortfolioStore } from "@/app/segment/portfolio/store";
 import { useEffect } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
-import { faArrowLeft, faArrowRight, faClose } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight, faClose, faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ProjectVal } from "@/app/segment/portfolio/values";
 import NestedCarousel from "@/app/segment/portfolio/component/NestedCarousel";
@@ -12,8 +12,9 @@ import slidesData from '@/app/segment/portfolio/values/project_values.json';
 import LoadingWrapper from "@/app/segment/portfolio/component/LoadingWrapper"
 import { ProjectType } from "@/app/segment/portfolio/type";
 import cn from 'clsx';
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 export default function ProjectDialog() {
-    const { project_dialog, set_project_dialog, selected_project, set_selected_project, set_selected_project_index, selected_project_index, is_loading } = PortfolioStore();
+    const { project_dialog, set_project_dialog, selected_project, set_selected_project, set_selected_project_index, selected_project_index, is_loading, set_multiple_links, set_multiple_link_dialog } = PortfolioStore();
     const projects: ProjectType[] = slidesData;
     // clear the state on unmount
     useEffect(() => {
@@ -67,7 +68,7 @@ export default function ProjectDialog() {
         return (
             <>
 
-                <div className='flex flex-row  flex-wrap gap-1 items-center' >
+                <div className='flex flex-row  flex-wrap gap-1 items-center text-sm' >
                     <div>Technology Used:&nbsp;</div>
                     <LoadingWrapper>
                         {selected_project && selected_project.technology && selected_project.technology.map((item: string, index: number) => (
@@ -76,14 +77,14 @@ export default function ProjectDialog() {
                     </LoadingWrapper>
                 </div>
 
-                <div className='flex flex-row gap-1 items-center'>
+                <div className='flex flex-row gap-1 items-center text-sm'>
                     <div>Project Type:&nbsp;</div>
                     <LoadingWrapper>
                         <Badge>{selected_project.type}</Badge>
                     </LoadingWrapper>
                 </div>
 
-                <div className='flex flex-row gap-1 items-center'>
+                <div className='flex flex-row gap-1 items-center text-sm'>
                     <div>Platform:&nbsp;</div>
                     <LoadingWrapper>
                         {selected_project && selected_project.platform && selected_project.platform.map((item: string, index: number) => (
@@ -92,7 +93,7 @@ export default function ProjectDialog() {
                     </LoadingWrapper>
                 </div>
 
-                <div className='flex flex-row flex-wrap gap-1 items-center' >
+                <div className='flex flex-row flex-wrap gap-1 items-center text-sm' >
                     <div>Status:&nbsp;</div>
                     <LoadingWrapper>
                         {selected_project && selected_project.status && selected_project.status.map((item: string, index: number) => (
@@ -102,7 +103,7 @@ export default function ProjectDialog() {
                 </div>
 
 
-                <div className='flex flex-row gap-1 items-center'>
+                <div className='flex flex-row gap-1 items-center text-sm'>
                     <div>Role:&nbsp;</div>
                     <LoadingWrapper>
                         {selected_project && selected_project.role && selected_project.role.map((item: string, index: number) => (
@@ -112,7 +113,7 @@ export default function ProjectDialog() {
                 </div>
 
 
-                <div className='flex flex-col '>
+                <div className='flex flex-col text-sm'>
                     <LoadingWrapper>
                         <div className='pr-6'>{selected_project.long_description}</div>
                     </LoadingWrapper>
@@ -122,7 +123,7 @@ export default function ProjectDialog() {
                 <LoadingWrapper>
                     {selected_project && selected_project.higlights && (
                         <>
-                            <div className='flex flex-col flex-wrap gap-1  '>
+                            <div className='flex flex-col flex-wrap gap-1  text-sm'>
                                 {selected_project.higlights.map((item: string, index: number) => (
                                     <p key={index}>• {item}.</p>
                                 ))}
@@ -134,16 +135,16 @@ export default function ProjectDialog() {
                 <LoadingWrapper>
                     {selected_project && selected_project.demo_accounts && (
                         <>
-                            <div className='flex flex-col  text-sm  pb-12 sm:pb-0'>
+                            <div className='flex flex-col  text-xs'>
                                 <div>Demo Accounts:&nbsp;</div>
                                 <Accordion type="single" collapsible >
-                                    {selected_project.demo_accounts.map((item: { role: string; username: string; password: string }, index:number) => (
+                                    {selected_project.demo_accounts.map((item: { role: string; username: string; password: string }, index: number) => (
                                         <AccordionItem key={`role${item.role}${index}`} value={`role${item.role}${index}`}>
                                             <AccordionTrigger>{item.role}</AccordionTrigger>
                                             <AccordionContent className="pl-20">
                                                 <Accordion type="single" collapsible className="">
-                                                    <div className="p-2">Username: {item.username}</div>
-                                                    <div className="p-2 pb-8">Password: {item.password}</div>
+                                                    <AccordionContent>Username: {item.username}</AccordionContent>
+                                                    <AccordionContent>Password: {item.password}  </AccordionContent>
                                                 </Accordion>
                                             </AccordionContent>
                                         </AccordionItem>
@@ -154,6 +155,27 @@ export default function ProjectDialog() {
                     )}
                 </LoadingWrapper>
 
+                <div className='grow'></div>
+                <div className='flex flex-row justify-between dark:text-white  items-center h-16  '>
+                    <LoadingWrapper>
+                        <p className='lg:ml-2'>{(1 + selected_project_index)}/{slidesData.length}</p>
+                        <div className='flex flex-row gap-4 pr-3'>
+                            {selected_project.source_code && selected_project.source_code.length > 0 && (
+                                <div className='flex flex-col enlarge_litle' onClick={() => { set_multiple_links(selected_project.source_code); set_multiple_link_dialog(true); }} >
+                                    <FontAwesomeIcon icon={faGithub} className=" grow " size="xl" />
+                                    <p className='text-blue-500'>Source Code</p>
+                                </div>
+
+                            )}
+                            {selected_project && selected_project.project_link && (
+                                <a href={selected_project.project_link} target="_blank" rel="noopener noreferrer" className=" grow enlarge_litle flex flex-col">
+                                    <FontAwesomeIcon icon={faLink} size="xl" />
+                                    <p className='text-blue-500'>Visit</p>
+                                </a>
+                            )}
+                        </div>
+                    </LoadingWrapper>
+                </div>
 
             </>
         )
@@ -168,11 +190,11 @@ export default function ProjectDialog() {
 
                 <div className={cn('flex flex-col sm:flex-row w-full sm:h-full p-2', { 'h-full': is_loading })}>
 
-                    <div className={cn("bg-gray-200 h-[25%] w-full  sm:w-[70%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] sm:rounded-2xl", { 'h-[50%]': is_loading })}>
+                    <div className={cn("bg-gray-200 h-[25%] w-full  sm:w-[65%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] sm:rounded-2xl", { 'h-[50%]': is_loading })}>
                         <NestedCarousel />
                     </div>
 
-                    <div className={cn("bg-white w-full sm:w-[30%] sm:overflow-y-auto   sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] sm:rounded-2xl  sm:over", { 'h-[90%]': is_loading })}>
+                    <div className={cn("bg-white w-full sm:w-[35%] sm:overflow-y-auto   sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] sm:rounded-2xl  sm:over", { 'h-[90%]': is_loading })}>
                         {projectDescription()}
                     </div>
 
