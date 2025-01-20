@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { ProjectVal } from "@/app/segment/portfolio/values";
+import { PortfolioState } from "@/app/segment/portfolio/type";
 
 export const PortfolioStore = create<PortfolioState>((set) => ({
   multiple_link: [],

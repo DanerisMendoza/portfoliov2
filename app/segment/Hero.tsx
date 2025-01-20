@@ -24,7 +24,7 @@ const Hero = () => {
                             data-aos-delay="800"
                             data-aos-duration="500"
                         >
-                            I'm a Software Developer
+                            I&apos;m a Software Developer
                         </h2>
                         <div className="">
                             <h5

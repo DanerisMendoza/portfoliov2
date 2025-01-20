@@ -1,7 +1,7 @@
+'use client'
 import { PortfolioStore } from "@/app/segment/portfolio/store";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, } from "@/components/ui/dialog"
+import { useEffect } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog"
 import { faArrowLeft, faArrowRight, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ProjectVal } from "@/app/segment/portfolio/values";
@@ -9,8 +9,8 @@ import NestedCarousel from "@/app/segment/portfolio/component/NestedCarousel";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import slidesData from '@/app/segment/portfolio/values/project_values.json';
-import { Skeleton } from "@/components/ui/skeleton"
 import LoadingWrapper from "@/app/segment/portfolio/component/LoadingWrapper"
+import { ProjectType } from "@/app/segment/portfolio/type";
 import cn from 'clsx';
 export default function ProjectDialog() {
     const { project_dialog, set_project_dialog, selected_project, set_selected_project, set_selected_project_index, selected_project_index, is_loading } = PortfolioStore();
@@ -70,7 +70,7 @@ export default function ProjectDialog() {
                 <div className='flex flex-row  flex-wrap gap-1 items-center' >
                     <div>Technology Used:&nbsp;</div>
                     <LoadingWrapper>
-                        {selected_project && selected_project.technology && selected_project.technology.map((item, index) => (
+                        {selected_project && selected_project.technology && selected_project.technology.map((item: string, index: number) => (
                             <Badge key={index}  >{item}</Badge>
                         ))}
                     </LoadingWrapper>
@@ -86,7 +86,7 @@ export default function ProjectDialog() {
                 <div className='flex flex-row gap-1 items-center'>
                     <div>Platform:&nbsp;</div>
                     <LoadingWrapper>
-                        {selected_project && selected_project.platform && selected_project.platform.map((item, index) => (
+                        {selected_project && selected_project.platform && selected_project.platform.map((item: string, index: number) => (
                             <Badge key={index} >{item}</Badge>
                         ))}
                     </LoadingWrapper>
@@ -95,7 +95,7 @@ export default function ProjectDialog() {
                 <div className='flex flex-row flex-wrap gap-1 items-center' >
                     <div>Status:&nbsp;</div>
                     <LoadingWrapper>
-                        {selected_project && selected_project.status && selected_project.status.map((item, index) => (
+                        {selected_project && selected_project.status && selected_project.status.map((item: string, index: number) => (
                             <Badge key={index}>{item}</Badge>
                         ))}
                     </LoadingWrapper>
@@ -105,7 +105,7 @@ export default function ProjectDialog() {
                 <div className='flex flex-row gap-1 items-center'>
                     <div>Role:&nbsp;</div>
                     <LoadingWrapper>
-                        {selected_project && selected_project.role && selected_project.role.map((item, index) => (
+                        {selected_project && selected_project.role && selected_project.role.map((item: string, index: number) => (
                             <Badge key={index}>{item}</Badge>
                         ))}
                     </LoadingWrapper>
@@ -123,7 +123,7 @@ export default function ProjectDialog() {
                     {selected_project && selected_project.higlights && (
                         <>
                             <div className='flex flex-col flex-wrap gap-1  '>
-                                {selected_project.higlights.map((item, index) => (
+                                {selected_project.higlights.map((item: string, index: number) => (
                                     <p key={index}>• {item}.</p>
                                 ))}
                             </div>
@@ -137,7 +137,7 @@ export default function ProjectDialog() {
                             <div className='flex flex-col  text-sm  pb-12 sm:pb-0'>
                                 <div>Demo Accounts:&nbsp;</div>
                                 <Accordion type="single" collapsible >
-                                    {selected_project.demo_accounts.map((item, index) => (
+                                    {selected_project.demo_accounts.map((item: { role: string; username: string; password: string }, index:number) => (
                                         <AccordionItem key={`role${item.role}${index}`} value={`role${item.role}${index}`}>
                                             <AccordionTrigger>{item.role}</AccordionTrigger>
                                             <AccordionContent className="pl-20">

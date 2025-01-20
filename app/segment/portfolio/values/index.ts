@@ -1,3 +1,5 @@
+import { ProjectType } from "@/app/segment/portfolio/type";
+
 export const ProjectVal: ProjectType = {
   name: "",
   project_link: "",

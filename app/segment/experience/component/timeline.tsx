@@ -1,9 +1,5 @@
-// components/Timeline.js
-import { cn } from "@/lib/utils"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "@/components/ui/card"
-import { GlobalStore } from "@/app/GlobalStore";
+import { Card } from "@/components/ui/card"
 const Timeline = ({ events }: any) => {
-    const { is_dark } = GlobalStore();
     return (
         <div className="relative  mx-auto pt-8 pb-36 overflow-x-hidden">
             {/* Timeline line */}

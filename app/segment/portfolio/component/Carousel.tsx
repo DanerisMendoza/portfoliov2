@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { GlobalStore } from '@/app/GlobalStore'
 import { PortfolioStore } from '@/app/segment/portfolio/store'
 import { DynamicSystemLogo } from "@/app/segment/portfolio/component/DynamicSystemLogo";
+import { ProjectType } from "@/app/segment/portfolio/type";
 export default function Carousel() {
 
   const { is_dark } = GlobalStore();
@@ -72,9 +73,10 @@ export default function Carousel() {
                 </div>
                 <div className="self-center flex flex-row gap-3 items-center">
                   {!Array.isArray(project.source_code) && project.source_code ? (
-                    <a href={project.source_code} target="_blank" className="text-blue-500 grow enlarge">
+                    <a href={project.source_code} target="_blank" className="text-blue-500 grow enlarge" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faGithub} size="2xl" />
                     </a>
+
                   ) : project.source_code.length > 0 && (
                     <>
                       <FontAwesomeIcon icon={faGithub} size="2xl" className="text-blue-500 grow enlarge" onClick={() => { set_multiple_links(project.source_code); set_multiple_link_dialog(true); }} />
@@ -82,7 +84,7 @@ export default function Carousel() {
                   )}
                   <FontAwesomeIcon onClick={() => { set_selected_project(project); set_project_dialog(true); set_selected_project_index(index) }} className='enlarge pl-2 pr-2 ' style={{ color: is_dark ? '#ffffff' : '#000000', border: is_dark ? '1px solid #ffffff' : '1px solid #000000', borderRadius: '12%' }} icon={faEllipsis} size="2xl" />
                   {project.project_link && (
-                    <a href={project.project_link} target="_blank" className="text-blue-500 grow enlarge">
+                    <a href={project.project_link} target="_blank" className="text-blue-500 grow enlarge" rel="noopener noreferrer">
                       <FontAwesomeIcon icon={faLink} size="2xl" />
                     </a>
                   )}

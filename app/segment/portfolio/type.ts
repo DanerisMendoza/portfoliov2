@@ -1,4 +1,4 @@
-interface ProjectType {
+export interface ProjectType {
   name: string;
   project_link: string;
   project_logo: string;
@@ -18,14 +18,14 @@ interface ProjectType {
   isWebFirst: boolean;
 }
 
-interface LinkItem {
+export interface LinkItem {
   Frontend?: string;
   Backend?: string;
   Mobile?: string;
   source_code?: string;
 }
 
-interface PortfolioState {
+export interface PortfolioState {
   multiple_link: LinkItem[];
   multiple_link_dialog: boolean;
   project_dialog: boolean;

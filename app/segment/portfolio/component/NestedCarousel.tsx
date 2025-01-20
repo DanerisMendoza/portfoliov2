@@ -8,10 +8,10 @@ import { Keyboard, Navigation, Pagination, Scrollbar, A11y } from 'swiper/module
 import { useEffect, useState } from "react";
 import { DynamicSystemLogo } from "@/app/segment/portfolio/component/DynamicSystemLogo";
 import slidesData from '@/app/segment/portfolio/values/project_values.json';
-import LoadingWrapper from "./LoadingWrapper";
 import { HashLoader } from "react-spinners";
+import { ProjectType } from "@/app/segment/portfolio/type";
 
-export default function () {
+export default function Index() {
     const { project_dialog, set_project_dialog, selected_project, set_selected_project, selected_project_index, set_selected_images, selected_images, set_is_loading, is_loading } = PortfolioStore();
     const [systemLogo, setSystemLogo] = useState(DynamicSystemLogo("#000000"));
     const [swiper, setSwiper] = useState(null);
@@ -137,11 +137,11 @@ export default function () {
                             centeredSlides={true}
                             modules={[Keyboard, Navigation, Pagination]}
                             navigation
-                            onSlideChange={(data) => { }}
-                            onClick={(data) => {
-                                // dispatch(setActiveIndex(data.activeIndex))
-                                // dispatch(setIsFullScreen(true))
-                            }}
+                            // onSlideChange={(data) => { }}
+                            // onClick={(data) => {
+                            //     dispatch(setActiveIndex(data.activeIndex))
+                            //     dispatch(setIsFullScreen(true))
+                            // }}
                         >
                             {selected_project && (
                                 (selected_project.images_num_web && selected_project.images_num_web > 0) ||

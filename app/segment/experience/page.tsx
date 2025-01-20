@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimeline } from "@fortawesome/free-solid-svg-icons";
 import Timeline from "@/app/segment/experience/component/timeline";
