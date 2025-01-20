@@ -7,12 +7,15 @@ import 'swiper/css/scrollbar';
 import { Keyboard, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { useEffect, useState } from "react";
 import { DynamicSystemLogo } from "@/app/segment/portfolio/component/DynamicSystemLogo";
+import slidesData from '@/app/segment/portfolio/values/project_values.json';
+import LoadingWrapper from "./LoadingWrapper";
+import { HashLoader } from "react-spinners";
 
 export default function () {
-    const { project_dialog, set_project_dialog, selected_project, set_selected_project, set_selected_images, selected_images } = PortfolioStore();
+    const { project_dialog, set_project_dialog, selected_project, set_selected_project, selected_project_index, set_selected_images, selected_images, set_is_loading, is_loading } = PortfolioStore();
     const [systemLogo, setSystemLogo] = useState(DynamicSystemLogo("#000000"));
     const [swiper, setSwiper] = useState(null);
-    
+    const projects: ProjectType[] = slidesData;
     const getImageDimensions = async (blob: any) => {
         return new Promise((resolve, reject) => {
             const img = new Image();
@@ -24,46 +27,28 @@ export default function () {
         });
     };
 
-    const fetchImages = async () => {
+    const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+    const fetchImages = async (SelectedProject: ProjectType) => {
         try {
-            if (selected_project.name !== '') {
-                const imagesPathWeb = `${selected_project.images_path}/web`;
-                const imagesPathMobile = `${selected_project.images_path}/mobile`;
+            set_is_loading(true); // Set loading state to true before starting the fetch operation
+            if (SelectedProject.name !== '') {
+                const imagesPathWeb = `${SelectedProject.images_path}/web`;
+                const imagesPathMobile = `${SelectedProject.images_path}/mobile`;
 
                 const imagePromisesWeb = [];
-                for (let index = 0; index < selected_project.images_num_web; index++) {
-                    try {
-                        const response = await fetch(`${imagesPathWeb}/${index + 1}.png`);
-                        if (!response.ok) {
-                            throw new Error(`Failed to fetch web image ${index + 1}`);
-                        }
-                        const blob = await response.blob();
-                        const dimensions = await getImageDimensions(blob);
-                        imagePromisesWeb.push({ blob, dimensions });
-                    } catch (error) {
-                        // Handle errors here if needed
-                        console.error(error);
-                    }
+                for (let index = 0; index < SelectedProject.images_num_web; index++) {
+                    imagePromisesWeb.push(fetchImage(`${imagesPathWeb}/${index + 1}.png`, 'web', index + 1));
                 }
+
                 const imagePromisesMobile = [];
-                for (let index = 0; index < selected_project.images_num_mobile!; index++) {
-                    try {
-                        const response = await fetch(`${imagesPathMobile}/${index + 1}.png`);
-                        if (!response.ok) {
-                            throw new Error(`Failed to fetch web image ${index + 1}`);
-                        }
-                        const blob = await response.blob();
-                        const dimensions = await getImageDimensions(blob);
-                        imagePromisesMobile.push({ blob, dimensions });
-                    } catch (error) {
-                        // Handle errors here if needed
-                        console.error(error);
-                    }
+                for (let index = 0; index < SelectedProject.images_num_mobile!; index++) {
+                    imagePromisesMobile.push(fetchImage(`${imagesPathMobile}/${index + 1}.png`, 'mobile', index + 1));
                 }
 
                 try {
                     const imagesWebWithDimensions = await Promise.all(imagePromisesWeb);
                     const imagesMobileWithDimensions = await Promise.all(imagePromisesMobile);
+
                     const imagesWebObjects = imagesWebWithDimensions.map(({ blob, dimensions }, index) => ({
                         src: blob,
                         platform: 'img_slide_web',
@@ -81,79 +66,119 @@ export default function () {
                         height: (dimensions as any).height,
                         index: index + 1
                     }));
-                    let combinedImages = []
-                    if (selected_project.isWebFirst) {
+
+                    let combinedImages = [];
+                    if (SelectedProject.isWebFirst) {
                         combinedImages = [...imagesWebObjects, ...imagesMobileObjects];
                     } else {
                         combinedImages = [...imagesMobileObjects, ...imagesWebObjects];
                     }
-                    set_selected_images(combinedImages);
+                    set_selected_project(projects[selected_project_index])
+                    set_selected_images(combinedImages); // Update selected images
                 } catch (error) {
                     console.error(error);
-                    // Handle error
                 }
             }
         } catch (error) {
             console.error('Error fetching images:', error);
+        } finally {
+            set_is_loading(false); // Ensure loading state is set to false after the fetch operation completes (success or failure)
         }
     };
 
+    const fetchImage = async (imageUrl: any, platform: any, index: any) => {
+        try {
+            const response = await fetch(imageUrl);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${platform} image ${index}`);
+            }
+            const blob = await response.blob();
+            const dimensions = await getImageDimensions(blob);
+            return { blob, dimensions };
+        } catch (error) {
+            console.error(error);
+            return { blob: null, dimensions: null };  // In case of failure, return null values
+        }
+    };
+
+
     useEffect(() => {
-        fetchImages();
-    }, [selected_project]);
+        console.log(is_loading)
+    }, [is_loading])
+
+    // useEffect(() => {
+    //     fetchImages();
+    // }, [selected_project]);
+
+    useEffect(() => {
+        console.log(selected_project_index)
+        fetchImages(projects[selected_project_index]);
+    }, [selected_project_index])
 
     return (
-        <Swiper
-            // onSwiper={setSwiper}
-            className="w-full"
-            pagination={{
-                dynamicBullets: true,
-                clickable: true
-            }}
-            keyboard={{
-                enabled: true,
-            }}
-            centeredSlides={true}
-            modules={[Keyboard, Navigation, Pagination]}
-            navigation
-            onSlideChange={(data) => {}}
-            onClick={(data) => {
-                // dispatch(setActiveIndex(data.activeIndex))
-                // dispatch(setIsFullScreen(true))
-            }}
-        >
-            {selected_project && (
-                (selected_project.images_num_web && selected_project.images_num_web > 0) ||
-                (selected_project.images_num_mobile && selected_project.images_num_mobile > 0)
-            ) ? (
-                <>
-                    {selected_images.length > 0 && selected_images.map((item: any, index:number) => (
-                        <SwiperSlide key={`web${index}`}>
-                            {selected_images.platform === 'img_slide_web' ? (
-                                <img
-                                    className='img_slide_web'
-                                    src={`${selected_project.images_path}/${item.folder}/${item.index}.png`}
-                                    alt='app'
-                                />
+        <>
+            {
+                is_loading ? (
+                    <div className="w-full h-full flex flex-col justify-center items-center">
+                        <HashLoader color="black" loading={true} size={50} />
+                    </div>
+                ) : (
+                    <div>
+                        <Swiper
+                            // onSwiper={setSwiper}
+                            className="w-full"
+                            pagination={{
+                                dynamicBullets: true,
+                                clickable: true
+                            }}
+                            keyboard={{
+                                enabled: true,
+                            }}
+                            centeredSlides={true}
+                            modules={[Keyboard, Navigation, Pagination]}
+                            navigation
+                            onSlideChange={(data) => { }}
+                            onClick={(data) => {
+                                // dispatch(setActiveIndex(data.activeIndex))
+                                // dispatch(setIsFullScreen(true))
+                            }}
+                        >
+                            {selected_project && (
+                                (selected_project.images_num_web && selected_project.images_num_web > 0) ||
+                                (selected_project.images_num_mobile && selected_project.images_num_mobile > 0)
+                            ) ? (
+                                <>
+                                    {selected_images.length > 0 && selected_images.map((item: any, index: number) => (
+                                        <SwiperSlide key={`web${index}`}>
+                                            {selected_images.platform === 'img_slide_web' ? (
+                                                <img
+                                                    className='img_slide_web'
+                                                    src={`${selected_project.images_path}/${item.folder}/${item.index}.png`}
+                                                    alt='app'
+                                                />
+                                            ) : (
+                                                <img
+                                                    className='img_slide_mobile'
+                                                    src={`${selected_project.images_path}/${item.folder}/${item.index}.png`}
+                                                    alt='app'
+                                                />
+                                            )}
+
+                                        </SwiperSlide>
+                                    ))}
+                                </>
                             ) : (
-                                <img
-                                    className='img_slide_mobile'
-                                    src={`${selected_project.images_path}/${item.folder}/${item.index}.png`}
-                                    alt='app'
-                                />
+                                <SwiperSlide>
+                                    <div className="flex flex-col items-center text-center ">
+                                        <img className='imgSlide2 pb-9' src={systemLogo} alt='app' />
+                                    </div>
+                                </SwiperSlide>
                             )}
 
-                        </SwiperSlide>
-                    ))}
-                </>
-            ) : (
-                <SwiperSlide>
-                    <div className="flex flex-col items-center text-center ">
-                        <img className='imgSlide2 pb-9' src={systemLogo} alt='app'  />
-                    </div>
-                </SwiperSlide>
-            )}
-       
-        </Swiper>
+                        </Swiper>
+                    </div>)
+            }
+        </>
+
     )
 }

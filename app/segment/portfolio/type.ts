@@ -32,6 +32,7 @@ interface PortfolioState {
   selected_project: ProjectType;
   selected_images: any;
   selected_project_index: number;
+  is_loading: boolean;
 
   set_multiple_links: (multiple_link: LinkItem[]) => void;
   set_multiple_link_dialog: (multiple_link_dialog: boolean) => void;
@@ -39,4 +40,5 @@ interface PortfolioState {
   set_selected_project: (selected_project: ProjectType) => void;
   set_selected_images: (selected_images: any) => void;
   set_selected_project_index: (selected_project_index: any) => void;
+  set_is_loading: (is_loading: boolean) => void;
 }
