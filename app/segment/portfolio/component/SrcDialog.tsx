@@ -15,7 +15,7 @@ export default function SrcDialog() {
 
     return (
         <Dialog open={multiple_link_dialog} onOpenChange={set_multiple_link_dialog}>
-            <DialogContent className="w-[97%] rounded-md">
+            <DialogContent className="w-[97%] rounded-md overflow-hidden">
                 <DialogHeader>
                     <DialogTitle></DialogTitle>
                     <DialogDescription>
@@ -30,7 +30,7 @@ export default function SrcDialog() {
                                     <a href={value as string} target="_blank" className=" enlarge_litle text-center text-wrap " rel="noopener noreferrer">
                                         <FontAwesomeIcon icon={faGithub} size="2xl" />
                                         <p>{key} </p>
-                                        <p className=' text-blue-500 text-xs'>{value as string}</p>
+                                        <p className=' text-blue-500 text-xs '>{value as string}</p>
                                     </a>
                                 </div>
                             ))}

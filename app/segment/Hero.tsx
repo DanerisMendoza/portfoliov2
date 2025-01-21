@@ -46,7 +46,7 @@ const Hero = () => {
                     >
                         <a className="enlarge_litle" href="mailto:danerismendoza096@gmail.com">
                             <Button
-                                className="flex gap-2"
+                                className="flex gap-2 rounded-2xl"
                             >
                                 Contact Me
                                 <FontAwesomeIcon icon={faEnvelope} />

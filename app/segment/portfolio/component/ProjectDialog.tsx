@@ -30,7 +30,7 @@ export default function ProjectDialog() {
 
     const header = () => {
         return (
-            <div className="bg-black w-full h-[7%] sm:h-[5%] text-white flex flex-col justify-center p-2 sm:p-2 items-start">
+            <div className="bg-black w-full  sm:h-[5%] text-white flex flex-col justify-center p-2 sm:p-2 items-start ">
                 <div className="flex justify-between  w-full p-2">
                     <div className="cursor-pointer" onClick={() => { set_project_dialog(false) }}>
                         <FontAwesomeIcon icon={faClose} size="xl" />
@@ -45,7 +45,7 @@ export default function ProjectDialog() {
     const guide = () => {
         return (
             <div className="flex gap-2">
-                <LoadingWrapper>
+                {/* <LoadingWrapper> */}
                     <FontAwesomeIcon icon={faArrowLeft} className="cursor-pointer" size="xl" onClick={() => {
                         if (selected_project_index > 0 && projects[selected_project_index - 1].name !== '') {
                             set_selected_project_index(selected_project_index - 1)
@@ -59,7 +59,7 @@ export default function ProjectDialog() {
                             // set_selected_project(projects[selected_project_index + 1])
                         }
                     }} />
-                </LoadingWrapper>
+                {/* </LoadingWrapper> */}
             </div>
         )
     }
@@ -183,18 +183,18 @@ export default function ProjectDialog() {
 
     return (
         <Dialog open={project_dialog} onOpenChange={set_project_dialog}>
-            <DialogContent hideCloseButton={true} fullscreen={true} className="overflow-y-auto sm:overflow-y-hidden min-w-full min-h-screen h-screen w-screen bg-gray-100 sm:rounded-md flex flex-col dark:bg-[#18191a]">
+            <DialogContent hideCloseButton={true} fullscreen={true} className={cn("overflow-y-auto sm:overflow-y-hidden min-w-full max-h-[calc(100dvh)] max-h-[calc(100dvh)]  sm:h-screen w-screen bg-gray-100 sm:rounded-md flex flex-col dark:bg-[#18191a]", { 'h-screen': is_loading })}>
                 <DialogTitle></DialogTitle>
                 <DialogDescription></DialogDescription>
                 {header()}
 
                 <div className={cn('flex flex-col sm:flex-row w-full sm:h-full p-2', { 'h-full': is_loading })}>
 
-                    <div className={cn("bg-gray-200 h-[25%] w-full  sm:w-[65%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] sm:rounded-2xl", { 'h-[50%]': is_loading })}>
+                    <div className={cn("bg-gray-200 min-h-[27%] w-full  sm:w-[65%] sm:h-full flex flex-col justify-center sm:pb-36 dark:bg-[#242526] sm:rounded-2xl")}>
                         <NestedCarousel />
                     </div>
 
-                    <div className={cn("bg-white w-full sm:w-[35%] sm:overflow-y-auto   sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] sm:rounded-2xl  sm:over", { 'h-[90%]': is_loading })}>
+                    <div className={cn("bg-white w-full min-h-full sm:w-[35%] sm:overflow-y-auto   sm:h-full p-4 flex flex-col gap-2  dark:text-white dark:bg-[#31363F] sm:rounded-2xl  sm:over")}>
                         {projectDescription()}
                     </div>
 
