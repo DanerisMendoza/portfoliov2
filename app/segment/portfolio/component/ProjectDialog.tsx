@@ -45,21 +45,19 @@ export default function ProjectDialog() {
     const guide = () => {
         return (
             <div className="flex gap-2">
-                {/* <LoadingWrapper> */}
+                <LoadingWrapper>
                     <FontAwesomeIcon icon={faArrowLeft} className="cursor-pointer" size="xl" onClick={() => {
                         if (selected_project_index > 0 && projects[selected_project_index - 1].name !== '') {
                             set_selected_project_index(selected_project_index - 1)
-                            // set_selected_project(projects[selected_project_index - 1])
                         }
                     }} />
                     <div className="w-36 text-center">{selected_project.name}</div>
                     <FontAwesomeIcon icon={faArrowRight} className="cursor-pointer" size="xl" onClick={() => {
                         if (selected_project_index < projects.length - 1 && projects[selected_project_index + 1].name !== '') {
                             set_selected_project_index(selected_project_index + 1)
-                            // set_selected_project(projects[selected_project_index + 1])
                         }
                     }} />
-                {/* </LoadingWrapper> */}
+                </LoadingWrapper>
             </div>
         )
     }
@@ -183,7 +181,7 @@ export default function ProjectDialog() {
 
     return (
         <Dialog open={project_dialog} onOpenChange={set_project_dialog}>
-            <DialogContent hideCloseButton={true} fullscreen={true} className={cn("overflow-y-auto sm:overflow-y-hidden min-w-full max-h-[calc(100dvh)] max-h-[calc(100dvh)]  sm:h-screen w-screen bg-gray-100 sm:rounded-md flex flex-col dark:bg-[#18191a]", { 'h-screen': is_loading })}>
+            <DialogContent hideCloseButton={true} fullscreen={true} className={cn("overflow-y-auto sm:overflow-y-hidden min-w-full max-h-[calc(100dvh)] min-h-[calc(100dvh)]  sm:h-screen w-screen bg-gray-100 sm:rounded-md flex flex-col dark:bg-[#18191a]", { 'h-screen': is_loading })}>
                 <DialogTitle></DialogTitle>
                 <DialogDescription></DialogDescription>
                 {header()}

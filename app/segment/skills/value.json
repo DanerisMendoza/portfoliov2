@@ -3,7 +3,7 @@
         "frontend": [
             {
                 "name": "ReactJs",
-                "image": "https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg"
+                "image": "/images/logo/react.png"
             },
             {
                 "name": "Tanstack",
@@ -14,8 +14,16 @@
                 "image": "/images/logo/nextjs.png"
             },
             {
+                "name": "Tailwind",
+                "image": "/images/logo/tailwind.png"
+            },
+            {
                 "name": "TypeScript",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png?20210506173343"
+                "image": "/images/logo/ts.png"
+            },
+            {
+                "name": "Shadcn",
+                "image": "/images/logo/shadcn.png"
             },
             {
                 "name": "VueJs",
@@ -26,24 +34,16 @@
                 "image": "/images/logo/vuetify.png"
             },
             {
-                "name": "Ionic",
-                "image": "/images/logo/ionic.png"
-            },
-            {
                 "name": "JavaScript",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/600px-JavaScript-logo.png?20120221235433"
-            },
-            {
-                "name": "jQuery",
-                "image": "/images/logo/Jquery.png"
+                "image": "/images/logo/javascript.png"
             },
             {
                 "name": "MaterialUI",
-                "image": "https://mui.com/static/logo.png"
+                "image": "/images/logo/mui.png"
             },
             {
-                "name": "Tailwind",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/600px-Tailwind_CSS_Logo.svg.png?20211001194333"
+                "name": "Mantine",
+                "image": "/images/logo/mantine.png"
             },
             {
                 "name": "Bootstrap",
@@ -57,14 +57,9 @@
                 "name": "CSS",
                 "image": "/images/logo/css.png"
             },
-            
             {
-                "name": "Shadcn",
-                "image": "/images/logo/shadcn.png"
-            },
-            {
-                "name": "Mantine",
-                "image": "/images/logo/mantine.png"
+                "name": "jQuery",
+                "image": "/images/logo/Jquery.png"
             }
         ],
         "backend": [
@@ -74,7 +69,7 @@
             },
             {
                 "name": "Node JS",
-                "image": "https://nodejs.org/static/logos/nodejsStackedDark.svg"
+                "image": "/images/logo/nodejs.png"
             },
             {
                 "name": "Swagger",
@@ -82,23 +77,41 @@
             },
             {
                 "name": "Mongo DB",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mongodb-icon.svg/640px-Mongodb-icon.svg.png"
+                "image": "/images/logo/mongodb.png"
             },
             {
                 "name": "Laravel",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/121px-Laravel.svg.png"
+                "image": "/images/logo/laravel.png"
             },
             {
                 "name": "PHP",
-                "image": "https://cdn-icons-png.flaticon.com/512/5968/5968332.png"
+                "image": "/images/logo/php.png"
             },
             {
                 "name": "Mysql",
-                "image": "https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png"
+                "image": "/images/logo/mysql.png"
             },
             {
                 "name": "Postman",
                 "image": "/images/logo/postman.png"
+            }
+        ],
+        "mobile": [
+            {
+                "name": "ExpoGo",
+                "image": "/images/logo/expogo.png"
+            },
+            {
+                "name": "Android Studio",
+                "image": "/images/logo/androidstudio.png"
+            },
+            {
+                "name": "Ionic",
+                "image": "/images/logo/ionic.png"
+            },
+            {
+                "name": "Capacitor",
+                "image": "/images/logo/capacitor.png"
             }
         ],
         "others": [
@@ -112,11 +125,15 @@
             },
             {
                 "name": "Jira",
-                "image": "https://cdn.icon-icons.com/icons2/2699/PNG/512/atlassian_jira_logo_icon_170511.png"
+                "image": "/images/logo/jira.png"
             },
             {
                 "name": "Figma",
-                "image": "https://cdn.sanity.io/images/599r6htc/localized/46a76c802176eb17b04e12108de7e7e0f3736dc6-1024x1024.png?w=670&h=670&q=75&fit=max&auto=format"
+                "image": "/images/logo/figma.png"
+            },
+            {
+                "name": "Vercel",
+                "image": "/images/logo/vercel.png"
             },
             {
                 "name": "Hostinger",
@@ -125,6 +142,10 @@
             {
                 "name": "cPanel",
                 "image": "/images/logo/cpanel.png"
+            },
+            {
+                "name": "Proxyman",
+                "image": "/images/logo/proxyman.png"
             }
         ]
     }

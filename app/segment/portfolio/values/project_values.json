@@ -37,7 +37,7 @@
         "project_link": "",
         "project_logo": "images/system.png",
         "description": "Laravel + VueJS + Vuetify",
-        "long_description": "Cloud Based Research Repository. It consist of 5 user roles: Admin, Dean, Chairperson, Professor and Student.",
+        "long_description": "Research Repository. It consist of 5 user roles: Admin, Dean, Chairperson, Professor and Student.",
         "technology": ["Laravel.10", "VueJS.2", "Vuetify", "Vuex", "Axios"],
         "platform": ["Web"],
         "status": ["Active"],
@@ -179,7 +179,7 @@
         "type": "Acad 2nd Year Case Study",
         "role": ["Full Stack Developer", "Project Lead"],
         "source_code": [
-            {"source_code":"https://github.com/DanerisMendoza/cashManagementTracker"}
+            {"source_code":"https://github.com/DanerisMendoza/cashMat"}
         ],
         "images_path": "/images/cmt",
         "images_num_web": 0,

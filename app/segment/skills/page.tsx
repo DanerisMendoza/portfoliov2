@@ -17,28 +17,26 @@ export default function Skills() {
         <FontAwesomeIcon icon={faToolbox} />
         <p>Skills</p>
       </div>
-      <div className="flex flex-col lg:flex-row sm:mt-8 gap-2">
+
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 sm:pt-8  sm:w-[100%] sm:m-auto">
         {Object.entries(skillsData.skills).map(([category, skills], index) => (
-          <Card
-            key={category}
-            className="bg-white dark:bg-[#31363F] flex-grow"
-            data-aos="fade-down"
-            data-aos-delay={500 + (index * 100)}
-            data-aos-duration="600"
-          >
+          <Card key={category} className=" h-[100%] pb-3 sm:p-0 dark:bg-[#31363F] rounded-xl"    
+          data-aos="fade-down"
+          data-aos-delay={500 + (index * 100)}
+          data-aos-duration="600">
             <CardContent>
-              <div className="h-full flex flex-col justify-between">
-                <h2 className="pt-2 text-2xl dark:text-white text-center ">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
-                </h2>
-                <div className="grid grid-cols-4 gap-4 m-auto lg:px-10 px-5 pt-5">
-                  {skills.map(skill => (
-                    <div key={skill.name} className=" card-mini text-center">
-                      <img src={skill.image} className="h-14 mx-auto" alt={skill.name} />
-                      <span className="block mt-2">{skill.name}</span>
+              <h2 className="text-2xl  text-center capitalize py-4">
+                {category}
+              </h2>
+              <div className="grid grid-cols-4 gap-x-6 sm:gap-x-3 gap-y-6 ">
+                {skills.map((skill, index) => (
+                  <div className="flex flex-col enlarge">
+                    <div key={index} className=" flex flex-col items-center border-none shadow-none  ">
+                      <img src={skill.image} alt={skill.name} className="min-h-[2.7rem]  sm:h-14 mx-auto rounded-sm bg-cover" />
                     </div>
-                  ))}
-                </div>
+                    <span className=" text-xs font-semibold text-center   max-w-20" >{skill.name}</span>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>

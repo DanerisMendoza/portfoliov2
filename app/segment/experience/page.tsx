@@ -7,7 +7,7 @@ import events from '@/app/segment/experience/value.json';
 export default function Experience() {
 
   return (
-    <div className="container pb-28 pt-8" id="experience">
+    <div className="container sm:pb-28 pt-8" id="experience">
       <div className='flex flex-row items-center justify-center text-5xl dark:text-white gap-5'
         data-aos="fade-up"
         data-aos-delay="100"
