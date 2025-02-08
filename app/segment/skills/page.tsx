@@ -7,7 +7,7 @@ import skillsData from "@/app/segment/skills/value.json";
 export default function Skills() {
 
   return (
-    <div className="sm:h-[90%] container  pb-10" id="skills">
+    <div className="lg:h-[90%] container  pb-10" id="skills">
       <div
         className="flex flex-row items-center justify-center text-5xl dark:text-white gap-5 p-10"
         data-aos="fade-up"
@@ -18,7 +18,7 @@ export default function Skills() {
         <p>Skills</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 sm:pt-8  sm:w-[100%] sm:m-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-8 sm:pt-8  sm:w-[100%] sm:m-auto">
         {Object.entries(skillsData.skills).map(([category, skills], index) => (
           <Card key={category} className=" h-[100%] pb-3 sm:p-0 dark:bg-[#31363F] rounded-xl"    
           data-aos="fade-down"
