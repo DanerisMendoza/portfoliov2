@@ -54,14 +54,9 @@ export default function Carousel() {
 
       {projects.map((project, index) => (
         <SwiperSlide key={project.name} style={{ height: '30rem', display: 'flex', alignItems: 'center', padding: '1rem' }} >
-          <Card className='rounded-xl w-full' style={{
-            // ff = white && 00 = black
-            backgroundColor: is_dark ? '#31363F' : '#ffffff'
-          }}>
+          <Card className='rounded-xl w-full dark:bg-[#31363F]'>
             <CardContent >
-              <div className="flex flex-col justify-start bg-white w-full h-96 p-6  m-center   " style={{
-                backgroundColor: is_dark ? '#31363F' : '#ffffff'
-              }}>
+              <div className="flex flex-col justify-start bg-white w-full h-96 p-6  m-center  dark:bg-[#31363F]">
                 <Badge className="mb-2 self-end  dark:text-black">
                   {project.type}
                 </Badge>

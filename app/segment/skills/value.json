@@ -30,6 +30,10 @@
                 "image": "/images/logo/vue.png"
             },
             {
+                "name": "Nuxt",
+                "image": "/images/logo/nuxt.png"
+            },
+            {
                 "name": "Vuetify",
                 "image": "/images/logo/vuetify.png"
             },
@@ -144,8 +148,8 @@
                 "image": "/images/logo/cpanel.png"
             },
             {
-                "name": "Proxyman",
-                "image": "/images/logo/proxyman.png"
+                "name": "AWS",
+                "image": "/images/logo/aws.png"
             }
         ]
     }

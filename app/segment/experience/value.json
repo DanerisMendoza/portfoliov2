@@ -5,12 +5,15 @@
     "date": "Sept 2024 - Present",
     "description": [
       "In charge of development of HRIS Web App Version 2 and the maintenance of the existing HRIS mobile Application.",
-      "Convert a Figma prototype to react-based web application following mobile first design and modular architecture.",
+      "Convert a Figma prototype web application following mobile first design.",
       "Developed reusable react components with typescript, Utilized tailwind CSS for responsive design.",
+      "Developed Scalable Codebase and Modular Architecture.",
       "Integration of RESTful APIs, ensuring efficient data communication between the frontend and backend.",
+      "Followed Agile methodology and participated in daily stand-up meetings.",
+      "Coordinate with QA teams and Project Manager to ensure quality of features.",
       "Utilized ReactJS, Zustand, Tanstack Query, Mantine, Tailwind CSS and Typescript for Web Development.",
       "Utilized React Native + Expo, Context API and Typescript for Mobile Development.",
-      "Collaborated with QA, Project Managers and other Developers utilizing Jira and Git."
+      "Utilized Jira and Git for project collaboration and version control."
     ]
   },
   {
@@ -18,11 +21,12 @@
     "title": "Freelance Full Stack Developer",
     "date": "November 2023 - Present",
     "description": [
-      "Co-in charge of ERD creation, including data normalization and using Figma for prototypes before development",
-      "In charge of Deployment of projects using SSH, cPanel, Hostinger, and a MySQL remote database.",
-      "Developed robust APIs utilizing Laravel and Server-side pagination, search, filtering, sorting and data processing.",
-      "Developed responsive web application and reusable web components with typescript.",
-      "Collaborated with a team of three developers, one QA and one project manager using Jira and Git."
+      "Delivered custom web solution ranging from small to medium businesses including Adamson Research Repository Management System, Disaster and Risk Management System, New Era Service Booking System, Kichieats.",
+      "Design and developed scalable and responsive web application, ensuring high performance and user satisfaction.",
+      "Developed RESTful APIs to ensure scalability and efficient communication between services",
+      "Implemented SEO best practices to improve website visibility, accessibility, and search engine rankings.",
+      "Designed an ERD and structured databases for high performance, optimizing query execution and scalability",
+      "Expertise in multiple programming languages and frameworks including PHP, Typescript, Java, and framework such as React, Next, Vue, Nuxt, Laravel, NodeJS, Spring boot"
     ]
   },
   {
@@ -32,7 +36,7 @@
     "description": [
       "Maintained and implemented updates in the existing internal ticketing system and optimized its performance",
       "Developed a web-based ticketing system for external users to integrate with the existing internal ticketing system.",
-      "Implemented Laravel Scheduler to synchronize a cloud database with a local database.",
+      "Implemented a scheduler to synchronize a cloud database with an on-premises database.",
       "Utilized Vue JS, Vuetify and Vuex for Frontend, Laravel and MySQL for Backend Development.",
       "Collaborated with other developers using Git, actively following the guidance of our seniors and the manager."
     ]
