@@ -4,16 +4,12 @@
     "title": "Web & Mobile Developer at Intellismart Technology",
     "date": "Sept 2024 - Present",
     "description": [
-      "In charge of development of HRIS Web App Version 2 and the maintenance of the existing HRIS mobile Application.",
-      "Convert a Figma prototype web application following mobile first design.",
-      "Developed reusable react components with typescript, Utilized tailwind CSS for responsive design.",
+      "In charge of development of HR Management System Web Application Version 2.",
+      "Maintain and enhance existing HR Management System Mobile Application.",
       "Developed Scalable Codebase and Modular Architecture.",
-      "Integration of RESTful APIs, ensuring efficient data communication between the frontend and backend.",
-      "Followed Agile methodology and participated in daily stand-up meetings.",
-      "Coordinate with QA teams and Project Manager to ensure quality of features.",
-      "Utilized ReactJS, Zustand, Tanstack Query, Mantine, Tailwind CSS and Typescript for Web Development.",
-      "Utilized React Native + Expo, Context API and Typescript for Mobile Development.",
-      "Utilized Jira and Git for project collaboration and version control."
+      "Utilized React JS, React Native, Typescript, .Net and MSSQL.",
+      "Utilized Jira and Git for project collaboration and version control.",
+      "Collaborated with QA and PMs in Agile sprints, ensuring feature quality through daily stand-ups."
     ]
   },
   {
@@ -22,11 +18,13 @@
     "date": "November 2023 - Present",
     "description": [
       "Delivered custom web solution ranging from small to medium businesses including Adamson Research Repository Management System, Disaster and Risk Management System, New Era Service Booking System, Kichieats.",
-      "Design and developed scalable and responsive web application, ensuring high performance and user satisfaction.",
-      "Developed RESTful APIs to ensure scalability and efficient communication between services",
-      "Implemented SEO best practices to improve website visibility, accessibility, and search engine rankings.",
-      "Designed an ERD and structured databases for high performance, optimizing query execution and scalability",
-      "Expertise in multiple programming languages and frameworks including PHP, Typescript, Java, and framework such as React, Next, Vue, Nuxt, Laravel, NodeJS, Spring boot"
+      "Collaborated with both local and international clients, including those based in Australia and Japan",
+      "Built scalable, responsive web apps for performance and user satisfaction.",
+      "Developed RESTful APIs to ensure scalability and efficient communication between services.",
+      "Deployed projects via Hostinger, Vercel, shared hosting, AWS EC2 and VPS environments.",
+      "Enhanced SEO and integrated GA4 for improved visibility, accessibility, and user insights.",
+      "Designed ERDs and optimized databases for performance and scalability.",
+      "Expertise in multiple programming languages and frameworks including PHP, Typescript, Java, and framework such as React, Next, Vue, Nuxt, Laravel, NodeJS, Spring boot."
     ]
   },
   {
